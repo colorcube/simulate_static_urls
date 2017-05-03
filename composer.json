@@ -1,5 +1,5 @@
 {
-    "name": "colorcube/simulate_static_urls",
+    "name": "colorcube/simulate-static-urls",
     "description": "Speaking urls without the hassle",
     "type": "typo3-cms-extension",
     "keywords": [
