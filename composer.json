@@ -27,8 +27,8 @@
         }
     },
     "replace": {
-        "auto404": "self.version",
-        "typo3-ter/auto404": "self.version"
+        "simulate-static-urls": "self.version",
+        "typo3-ter/simulate-static-urls": "self.version"
     },
     "require": {
         "typo3/cms": ">=7.6.0 <=8.99.99"
