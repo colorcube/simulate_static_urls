@@ -10,17 +10,15 @@ namespace Colorcube\SimulateStaticUrls\Model;
 class Url
 {
     public $title = '';
-
     public $languageUid = 0;
     public $pid = 0;
     public $type = 0;
 
 
+    public $absRefPrefix = '/';
     public $languageSegment = '';
     public $locationSegment = '';
-
     public $pathSegments = [];
-
     public $parameters = [];
 
 }

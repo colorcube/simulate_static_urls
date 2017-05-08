@@ -6,8 +6,8 @@ namespace Colorcube\SimulateStaticUrls\Service;
 use Colorcube\SimulateStaticUrls\Model\Configuration;
 use Colorcube\SimulateStaticUrls\Model\Url;
 use Colorcube\SimulateStaticUrls\Utility\StringUtility;
-use Doctrine\Common\Util\Debug;
 use TYPO3\CMS\Core\SingletonInterface;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 
 
@@ -61,11 +61,16 @@ class UrlEncodingService extends AbstractUrlMapService implements SingletonInter
      */
     protected $config;
 
+    protected $currentDomain;
+
 
     public function __construct(array $config)
     {
         $this->config = new Configuration((array)$config['simulateStaticUrls.']);
         $this->config->setValue('absRefPrefix', $config['absRefPrefix']);
+
+        $domainStartPage = FrontendControllerService::getController()->domainStartPage;
+        $this->currentDomain = FrontendControllerService::getController()->getDomainNameForPid($domainStartPage);
     }
 
 
@@ -78,6 +83,8 @@ class UrlEncodingService extends AbstractUrlMapService implements SingletonInter
     public function encodeFromQueryString(string $queryString): string
     {
         $url = new Url();
+
+        $url->absRefPrefix = $this->config->getValue('absRefPrefix') ?: '/';
 
         // for now add all parameters to the url
         // some parameters will be removed later so we might end up to have an empty parameter list
@@ -136,6 +143,20 @@ class UrlEncodingService extends AbstractUrlMapService implements SingletonInter
                 return;
             }
 
+            // check if the target page is on a different domain
+            $domain = FrontendControllerService::getController()->getDomainNameForPid($url->pid);
+            if ($domain && $this->currentDomain !== $domain) {
+
+                // URL shall be absolute:
+                if (GeneralUtility::getIndpEnv('TYPO3_SSL')) {
+                    $absoluteUrlScheme = 'https';
+                } else {
+                    $absoluteUrlScheme = 'http';
+                }
+
+                $url->absRefPrefix = $absoluteUrlScheme . '://' .$domain . '/';
+            }
+
             $pagePathSegments = null;
             if ($this->config->isEnabled('path')) {
                 $pagePathSegments = $this->getPathForPageRecord($pageRecord, $url->languageUid);
@@ -166,20 +187,18 @@ class UrlEncodingService extends AbstractUrlMapService implements SingletonInter
     /**
      * Finally we put the url all together
      *
-     * @param $url
+     * @param Url $url
      * @return string
      */
-    public function buildStaticUrl($url) :string
+    public function buildStaticUrl(Url $url) :string
     {
-        $prefix = $encodedPath = $this->config->getValue('absRefPrefix') ?? '/';
-
         $path = implode('/', $url->pathSegments);
 
         $simulatedFileName = $this->buildFilename($url);
 
         $parametersString = $this->buildParameterString($url);
 
-        return rtrim($prefix . $path, '/') . '/' . $simulatedFileName . $parametersString;
+        return rtrim($url->absRefPrefix . $path, '/') . '/' . $simulatedFileName . $parametersString;
     }
 
 
