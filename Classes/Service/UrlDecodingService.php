@@ -126,6 +126,7 @@ class UrlDecodingService extends AbstractUrlMapService implements SingletonInter
                     $getVars = static::queryStringToParametersArray(urldecode($row['params']));
                 } else {
                     // We log the missing hash but silently we ignore it so the page will be displayed but maybe with the wrong content
+                    // todo: redirect to page with md5?
                     error_log('md5hash not found for ' . $url);
                 }
                 break;
