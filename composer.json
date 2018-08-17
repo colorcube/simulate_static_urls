@@ -27,10 +27,10 @@
         }
     },
     "replace": {
-        "simulate-static-urls": "self.version",
-        "typo3-ter/simulate-static-urls": "self.version"
+        "simulate_static_urls": "self.version"
     },
     "require": {
-        "typo3/cms": ">=7.6.0 <=8.99.99"
+        "php": ">=7.0",
+        "typo3/cms-core": ">=7.6.0 <=8.99.99"
     }
 }
