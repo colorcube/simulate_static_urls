@@ -1,4 +1,4 @@
-# simulate_static_urls
+# simulate_static_urls TYPO3 Extension
 
 This is a TYPO3 extension.
 
@@ -61,20 +61,30 @@ Unfortunately ... there are parameters. There's no magic to remove them, so ther
 choose to shorten the url with parameters. But if that's lost the url is still working and shows the right page, but
 maybe not the single news entry what would normally displayed.
 
+
+
+## Usage
+
+Further information: https://docs.typo3.org/typo3cms/extensions/simulate_static_urls/
+
+### Dependencies
+
+* TYPO3 7.6 - 8.7
+
+### Installation
+
+#### Installation using Composer
+
+In your Composer based TYPO3 project root, just do `composer require colorcube/simulate_static_urls`. 
+
+#### Installation as extension from TYPO3 Extension Repository (TER)
+
+Download and install the extension with the extension manager module.
+
 ## Contribute
 
-
-*Git Repository*
-
-https://github.com/colorcube/simulate_static_urls
-
-*Issue Tracker*
-
-https://github.com/colorcube/simulate_static_urls/issues
-
-
-- Send pull requests to the repository
-- Use the issue tracker for feedback and discussions
+- Send pull requests to the repository. <https://github.com/colorcube/simulate_static_urls>
+- Use the issue tracker for feedback and discussions. <https://github.com/colorcube/simulate_static_urls/issues>
 
 
 ## TODO
