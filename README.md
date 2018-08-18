@@ -39,7 +39,7 @@ design.
 deleted the hash table. But still the right page would be displayed.)
 
 If you prefer an url like */en/topics/interesting/cool_new_stuff_here/* you might want to have a look at other xxxurl
-extensions. But maybe you want to hear what the meaning of the three numbers is:
+extensions. But maybe you want to hear what the meaning of the three numbers are:
 
     /en/topics/interesting/cool_new_stuff_here.42.0.1.html
 

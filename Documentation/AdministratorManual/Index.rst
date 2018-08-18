@@ -32,7 +32,7 @@ To enable the extension you have to add this TypoScript setup:
      config.simulateStaticUrls = 1
 
 
-Everything else has default values and don't necessarily need special configuration.
+Everything else has default values and doesn't necessarily need special configuration.
 
 
 Here's a full example of all config options:
@@ -75,7 +75,8 @@ Here's a full example of all config options:
      }
 
 
-The configuration is similar to the older simulatestatic extension. Except of the PATH_INFO mode the extension can be configured to work mostly like simulatestatic.
+The configuration is similar to the older simulatestatic extension. Except of the PATH_INFO mode the extension can be
+configured to work mostly like simulatestatic.
 
 Properties
 ^^^^^^^^^^
@@ -580,5 +581,7 @@ simulateStaticUrls.parameterEncodingInclude
 Maintenance
 -----------
 
-With the TypoScript configuration :ref:`setup-config-simulatestaticurls-parameterencodingtype` to *md5* url parameters will be stored in the database table cache_md5params. If the data of that table get lost all parameters for the urls are lost too, but the pages will still be delivered with the right type.
-The field tstamp of the table stores a timestamp of the last access. So you could deleted entries with old timestamps if you like.
+With the TypoScript configuration :ref:`setup-config-simulatestaticurls-parameterencodingtype` to *md5* url parameters
+will be stored in the database table cache_md5params. If the data of that table get lost all parameters for the urls are
+lost too, but the pages will still be delivered with the right type. The field tstamp of the table stores a timestamp of
+the last access. So you could deleted entries with old timestamps if you like.

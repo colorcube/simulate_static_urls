@@ -48,6 +48,7 @@ Is 'page not found' handling included?
 """"""""""""""""""""""""""""""""""""""
 
 No. When it makes sense it might be included later, but for now go with an extension which provides that functionality.
+You might try the auto404 extension.
 
 Can I change the configuration without breaking urls?
 """""""""""""""""""""""""""""""""""""""""""""""""""""

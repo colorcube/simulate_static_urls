@@ -9,7 +9,7 @@
 .. _start:
 
 =============================================================
-simulate_static_urls
+Speaking urls without the hassle
 =============================================================
 
 .. only:: html
@@ -30,7 +30,7 @@ simulate_static_urls
 		speaking,url,urls,realurl,simulate,static
 
 	:Copyright:
-		2017
+		2017-2018
 
 	:Author:
 		René Fritz
@@ -59,6 +59,7 @@ simulate_static_urls
 	AdministratorManual/Index
 	Faq
 	Roadmap
-	Contribute
 	References
 	Alternatives
+	Support/Index
+	Links
