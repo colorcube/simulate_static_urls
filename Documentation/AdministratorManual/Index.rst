@@ -19,6 +19,23 @@ Installation
 Install as usual. See next section for TypoScript configuration.
 
 
+Requirements
+------------
+
+The typical url rewriting (for Apache, Nginx, ...) needs to be enabled and properly configured so that index.php is
+called for any url. The Apache configuration looks like that:
+
+::
+
+    # If the file/symlink/directory does not exist => Redirect to index.php.
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+    RewriteRule .* /index.php [L]
+
+
+TYPO3 itself provides a .htaccess file with proper configuration. For Nginx you can find configuration on the net.
+
 
 .. _admin-config:
 
@@ -130,12 +147,12 @@ simulateStaticUrls
          ::
 
             RewriteEngine On
-            RewriteRule   ^[^/]*\.html$  index.php
+            RewriteRule .* /index.php [L]
 
          This means that any "\*.html"-documents should be handled by
          index.php.
 
-         TYPO3 provides already a more sophisticated rewrite configuration in an example .htacces file. That should be used.
+         TYPO3 provides already a more sophisticated rewrite configuration in an example .htaccess file. That should be used.
 
          Now if is done, TYPO3 will interpret the url of the html-document like
          this:
@@ -145,7 +162,7 @@ simulateStaticUrls
 
          **Example:**
 
-         TYPO3 will interpret this as page with uid=23 and type=1 :
+         TYPO3 will interpret this as page with uid=23 and type=0 :
 
          ::
 
