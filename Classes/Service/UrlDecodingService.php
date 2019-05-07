@@ -19,8 +19,8 @@ class UrlDecodingService extends AbstractUrlMapService implements SingletonInter
 
         // If there has been a redirect (basically; we arrived here otherwise than via "index.php" in the URL)
         // this can happen either due to a CGI-script or because of rewrite rule.
-        // Additionally we check if '.html' is in the url.
-        if ($pagePath && substr($pagePath, 0, 9) !== 'index.php' && stripos($pagePath, '.html')) {
+        // Additionally we check if '.html'/'.xml' is in the url.
+        if ($pagePath && substr($pagePath, 0, 9) !== 'index.php' && (stripos($pagePath, '.html') || stripos($pagePath, '.xml'))) {
             $parametersArray = $this->getParametersFromPagePath($pagePath);
         }
 
