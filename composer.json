@@ -8,6 +8,7 @@
         "simulate static urls",
         "speaking url"
     ],
+    "license": "GPL-2.0-or-later",
     "homepage": "https://github.com/colorcube/simulate_static_urls",
     "support": {
         "issues": "https://github.com/colorcube/simulate_static_urls/issues"
@@ -20,18 +21,17 @@
             "homepage": "http://www.colorcube.de"
         }
     ],
-    "license": "GPL-2.0+",
+    "require": {
+        "php": ">=7.0",
+        "typo3/cms-core": "^7.6 || ^8.0"
+    },
     "autoload": {
         "psr-4": {
             "Colorcube\\SimulateStaticUrls\\": "Classes/"
         }
     },
     "replace": {
-        "simulate_static_urls": "self.version"
-    },
-    "require": {
-        "php": ">=7.0",
-        "typo3/cms-core": "^7.6 || ^8.0"
+        "typo3-ter/simulate-static-urls": "self.version"
     },
     "extra": {
         "typo3/cms": {

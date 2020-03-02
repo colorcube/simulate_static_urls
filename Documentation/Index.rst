@@ -1,9 +1,4 @@
-﻿.. ==================================================
-.. FOR YOUR INFORMATION
-.. --------------------------------------------------
-.. -*- coding: utf-8 -*- with BOM.
-
-.. include:: Includes.txt
+﻿.. include:: Includes.txt
 
 
 .. _start:
@@ -35,9 +30,6 @@ Speaking urls without the hassle
 	:Author:
 		René Fritz
 
-	:Email:
-		r.fritz@colorcube.de
-
 	:License:
 		This document is published under the Open Publication License
 		available from http://www.opencontent.org/openpub/
@@ -49,12 +41,10 @@ Speaking urls without the hassle
 	a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
 
 
-	**Table of Contents**
-
 .. toctree::
-	:maxdepth: 3
-	:titlesonly:
+	:hidden:
 
+	Sitemap/Index
 	Introduction/Index
 	AdministratorManual/Index
 	Faq

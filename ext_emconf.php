@@ -14,4 +14,9 @@ $EM_CONF[$_EXTKEY] = [
             'typo3' => '7.6.0-8.99.99',
         ],
     ],
+    'autoload' => [
+        'psr-4' => [
+            'Colorcube\\SimulateStaticUrls\\' => 'Classes'
+        ]
+    ]
 ];
