@@ -65,7 +65,7 @@ maybe not the single news entry what would normally displayed.
 
 ## Usage
 
-Further information: https://docs.typo3.org/typo3cms/extensions/simulate_static_urls/
+Further information: https://docs.typo3.org/p/colorcube/simulate-static-urls/master/en-us/
 
 ### Dependencies
 
@@ -75,7 +75,7 @@ Further information: https://docs.typo3.org/typo3cms/extensions/simulate_static_
 
 #### Installation using Composer
 
-In your Composer based TYPO3 project root, just do `composer require colorcube/simulate_static_urls`. 
+In your Composer based TYPO3 project root, just do `composer require colorcube/simulate-static-urls`. 
 
 #### Installation as extension from TYPO3 Extension Repository (TER)
 
